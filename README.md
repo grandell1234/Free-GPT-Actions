@@ -12,3 +12,11 @@ A listing of Free GPT actions available for public use
 [Semantic Scholar](https://github.com/Anil-matcha/Free-GPT-Actions/blob/main/apps/semantic-scholar/schema.json)
 
 [Stack Exchange](https://github.com/Anil-matcha/Free-GPT-Actions/blob/main/apps/stackexchange/schema.json)
+
+### Other useful projects
+
+[Embed Custom GPT on Website](https://github.com/SamurAIGPT/Open-Custom-GPT)
+
+[Free popular GPTs built with Assistants api](https://github.com/Anil-matcha/Top-GPTs)
+
+[Add authentication to GPTs](https://github.com/Anil-matcha/GPT-Auth)
