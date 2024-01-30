@@ -13,6 +13,8 @@ A listing of Free GPT actions available for public use
 
 [Stack Exchange](https://github.com/Anil-matcha/Free-GPT-Actions/blob/main/apps/stackexchange/schema.json)
 
+[Reddit Wall street bets stock trends](https://github.com/Anil-matcha/Free-GPT-Actions/blob/main/apps/wallstreetbets-stocks-trend/schema.json)
+
 ### Other useful projects
 
 [Embed Custom GPT on Website](https://github.com/SamurAIGPT/Open-Custom-GPT)

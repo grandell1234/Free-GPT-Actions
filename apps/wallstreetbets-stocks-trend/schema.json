@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  title: WallStreetBets Top Stocks API
+  description: API for accessing information about top stocks discussed on the WallStreetBets subreddit, including sentiment analysis and comment counts.
+  version: "1.0.0"
+servers:
+  - url: https://tradestie.com/api/v1
+
+paths:
+  /apps/reddit:
+    get:
+      summary: Get Top Stocks from WallStreetBets
+      description: Retrieve a list of top stocks being discussed on the WallStreetBets subreddit, along with sentiment analysis (Bullish or Bearish) and the number of comments for each stock mention.
+      responses:
+        '200':
+          description: Successful response with data on top stocks from WallStreetBets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    no_of_comments:
+                      type: integer
+                      description: Number of comments on the Reddit post mentioning the stock
+                    sentiment:
+                      type: string
+                      description: Overall sentiment of the post (Bullish or Bearish) towards the stock
+                    sentiment_score:
+                      type: number
+                      description: Sentiment score indicating the strength of the sentiment
+                    ticker:
+                      type: string
+                      description: Stock ticker symbol associated with the post
+                  required:
+                    - no_of_comments
+                    - sentiment
+                    - sentiment_score
+                    - ticker
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
