@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: CoinCap API
+  description: API for accessing real-time cryptocurrency market data from CoinCap.io.
+  version: "1.0.0"
+servers:
+  - url: https://api.coincap.io/v2
+
+paths:
+  /assets:
+    get:
+      summary: Get Cryptocurrency Data
+      description: Retrieve real-time data for various cryptocurrencies, including market cap, volume, price, and more.
+      responses:
+        '200':
+          description: A list of cryptocurrencies with their market data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: Unique identifier for the cryptocurrency
+                        rank:
+                          type: string
+                          description: Rank of the cryptocurrency based on market cap
+                        symbol:
+                          type: string
+                          description: Symbol representing the cryptocurrency
+                        name:
+                          type: string
+                          description: Name of the cryptocurrency
+                        supply:
+                          type: string
+                          description: Current circulating supply of the cryptocurrency
+                        maxSupply:
+                          type: string
+                          description: Maximum possible supply of the cryptocurrency
+                        marketCapUsd:
+                          type: string
+                          description: Market capitalization in USD
+                        volumeUsd24Hr:
+                          type: string
+                          description: 24-hour trading volume in USD
+                        priceUsd:
+                          type: string
+                          description: Current price in USD
+                        changePercent24Hr:
+                          type: string
+                          description: Percentage change in price over the last 24 hours
+                        vwap24Hr:
+                          type: string
+                          description: 24-hour volume-weighted average price
+                        explorer:
+                          type: string
+                          description: URL to the blockchain explorer for the cryptocurrency
+                  timestamp:
+                    type: integer
+                    description: Timestamp of the data
+                required:
+                  - data
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
