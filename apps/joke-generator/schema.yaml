@@ -1,0 +1,92 @@
+openapi: 3.1.0
+info:
+  title: JokeAPI
+  description: API for fetching random jokes in various categories, including a safe mode filter.
+  version: "1.0.0"
+servers:
+  - url: https://v2.jokeapi.dev
+
+paths:
+  /joke/Any:
+    get:
+      summary: Get a Random Joke
+      description: Retrieve a random joke. Safe mode is enabled to filter out adult content.
+      parameters:
+        - in: query
+          name: safe-mode
+          required: true
+          schema:
+            type: boolean
+            default: true
+          description: Enable safe mode to exclude content not suitable for all audiences.
+      responses:
+        '200':
+          description: A random joke
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: boolean
+                    description: Indicates if there was an error fetching the joke.
+                  category:
+                    type: string
+                    description: The category of the joke.
+                  type:
+                    type: string
+                    description: The format of the joke, e.g., "twopart".
+                  setup:
+                    type: string
+                    description: The setup of the joke (for two-part jokes).
+                  delivery:
+                    type: string
+                    description: The delivery or punchline of the joke (for two-part jokes).
+                  flags:
+                    type: object
+                    properties:
+                      nsfw:
+                        type: boolean
+                        description: Indicates if the joke is not safe for work.
+                      religious:
+                        type: boolean
+                        description: Indicates if the joke is religious.
+                      political:
+                        type: boolean
+                        description: Indicates if the joke is political.
+                      racist:
+                        type: boolean
+                        description: Indicates if the joke is racist.
+                      sexist:
+                        type: boolean
+                        description: Indicates if the joke is sexist.
+                      explicit:
+                        type: boolean
+                        description: Indicates if the joke is explicit.
+                    required:
+                      - nsfw
+                      - religious
+                      - political
+                      - racist
+                      - sexist
+                      - explicit
+                  id:
+                    type: integer
+                    description: A unique identifier for the joke.
+                  safe:
+                    type: boolean
+                    description: Indicates if the joke is safe for all audiences.
+                  lang:
+                    type: string
+                    description: The language of the joke.
+                required:
+                  - error
+                  - category
+                  - type
+                  - id
+                  - safe
+                  - lang
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error

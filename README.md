@@ -17,6 +17,8 @@ A listing of Free GPT actions available for public use
 
 [Cryptocurrency prices](https://github.com/Anil-matcha/Free-GPT-Actions/blob/main/apps/cryptocurrency-prices/schema.json)
 
+[Joke Generator](https://github.com/Anil-matcha/Free-GPT-Actions/blob/main/apps/joke-generator/schema.yaml)
+
 ### Other useful projects
 
 [Embed Custom GPT on Website](https://github.com/SamurAIGPT/Open-Custom-GPT)
