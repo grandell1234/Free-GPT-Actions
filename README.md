@@ -1,3 +1,5 @@
+This repository is an adaptation of the [gpt-actions](https://github.com/bapo2/gpt-actions) repository by [bapo2,](https://github.com/bapo2) which is licensed under the [CC-BY-SA-4.0 license.](https://github.com/bapo2/gpt-actions/blob/main/LICENSE)
+
 # Free-GPT-Actions
 A listing of Free GPT actions available for public use
 
